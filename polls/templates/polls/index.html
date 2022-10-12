@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POLL APP</title>
+</head>
+<body>
+<h1>POLLS</h1>
+<hr>
+  {% if latest_question_list %}
+     <ul>
+        {% for q in latest_question_list %}
+         <li><a href ="{% url 'polls:detail' q.id %}">{{q.question_text}}</a></li>
+         {% endfor %}
+     </ul>
+    {% else %}
+        <p>NO POLLS AVAILABLE RIGHT NOW </p>
+    {% endif %}
+
+
+</body>
+</html>
